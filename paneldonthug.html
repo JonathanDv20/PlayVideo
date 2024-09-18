@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .dashboard {
+            display: none; /* Oculto hasta que se verifique */
+            text-align: center;
+        }
+
+        .dashboard h1 {
+            margin-bottom: 30px;
+        }
+
+        .stat-panel {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+
+        .stat-box {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+        }
+
+        /* Ventana emergente para la confirmación */
+        .login-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .login-popup-content {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .login-popup-content input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background-color: #333;
+            color: white;
+        }
+
+        .login-popup-content button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-popup-content button:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Panel de estadísticas (censurado hasta que se verifique) -->
+    <div class="dashboard" id="dashboard">
+        <h1>Panel de Administración</h1>
+        <div class="stat-panel">
+            <div class="stat-box">
+                <h3>Vistas</h3>
+                <p id="vistas">*****</p>
+            </div>
+            <div class="stat-box">
+                <h3>Seguidores</h3>
+                <p id="seguidores">*****</p>
+            </div>
+        </div>
+        <div class="stat-panel">
+            <div class="stat-box">
+                <h3>Hora de reproducciones ultimas 12h</h3>
+                <p id="reproducciones">*****</p>
+            </div>
+            <div class="stat-box">
+                <h3>Dinero Generado</h3>
+                <p id="dinero">*****</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana emergente para confirmar usuario -->
+    <div class="login-popup" id="loginPopup">
+        <div class="login-popup-content">
+            <h2>Primero confirmemos que eres tú</h2>
+            <input type="email" id="emailInput" placeholder="Correo electrónico">
+            <input type="password" id="passwordInput" placeholder="Contraseña">
+            <button id="loginButton">Confirmar</button>
+            <div class="error-message" id="errorMessage" style="display: none;">Correo o contraseña incorrectos</div>
+        </div>
+    </div>
+
+    <script>
+        // Datos de verificación
+        const validEmail = "DontHugMe@gmail.com";
+        const validPassword = "DontTT02i";
+
+        // Elementos de la página
+        const loginPopup = document.getElementById('loginPopup');
+        const dashboard = document.getElementById('dashboard');
+        const loginButton = document.getElementById('loginButton');
+        const emailInput = document.getElementById('emailInput');
+        const passwordInput = document.getElementById('passwordInput');
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Estadísticas falsas para mostrar luego de la confirmación
+        const vistas = document.getElementById('vistas');
+        const seguidores = document.getElementById('seguidores');
+        const reproducciones = document.getElementById('reproducciones');
+        const dinero = document.getElementById('dinero');
+
+        const data = {
+            vistas: "1.2K",
+            seguidores: "1,003",
+            reproducciones: "9h",
+            dinero: "$340.50"
+        };
+
+        // Función para verificar el usuario
+        loginButton.addEventListener('click', function() {
+            const email = emailInput.value;
+            const password = passwordInput.value;
+
+            if (email === validEmail && password === validPassword) {
+                loginPopup.style.display = 'none'; // Oculta la ventana emergente
+                dashboard.style.display = 'block'; // Muestra el panel de estadísticas
+
+                // Actualiza las estadísticas
+                vistas.innerText = data.vistas;
+                seguidores.innerText = data.seguidores;
+                reproducciones.innerText = data.reproducciones;
+                dinero.innerText = data.dinero;
+            } else {
+                errorMessage.style.display = 'block'; // Muestra el mensaje de error
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IlloJuan</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo para la ventana flotante */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Encabezado del perfil -->
+        <header class="profile-header">
+            <div class="profile-picture">
+                <img src="https://yt3.googleusercontent.com/0yT-Bb_JksIE12twsg726ffdrGbRfuoy_rMrgSOqoNJsY7wvm0pcYQfeDbNFTOrwwRY3T9_98g8=s160-c-k-c0x00ffffff-no-rj" alt="Foto de perfil">
+            </div>
+            <div class="profile-info">
+                <h1 class="username">IlloJuan 
+                    <img src="https://th.bing.com/th/id/R.a0f781a0a45f31633c07927e19b55548?rik=E3tQ8neRHJDbrQ&pid=ImgRaw&r=0" alt="Verificado" class="verified-badge">
+                </h1>
+                <div class="profile-stats">
+                    <div><strong>1.2K</strong> Me Gusta</div>
+                    <div><strong id="followers">1K</strong> seguidores</div>
+                    <div><strong>4</strong> seguidos</div>
+                </div>
+                <button class="follow-btn" id="followButton">Seguir</button>
+            </div>
+        </header>
+
+        <!-- Bio del perfil -->
+        <section class="profile-bio">
+            <h2>Que Hago?</h2>
+            <p>Hola, aquí resubiré videos de Youtube de IlloJuan. Por favor, me llamo Daniel, no intento copiar videos para hacerme pasar por el!</p>
+        </section>
+
+        <!-- Galería de publicaciones -->
+        <section class="profile-gallery">
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIP.dLXrAUXtvLjihuNQD7MytwHaEK?rs=1&pid=ImgDetMain" alt="Publicación 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ytimg.com/vi/mF7GnaVpc6k/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgWyhRMA8=&rs=AOn4CLA6-cGKgdI3_WXwyRaHSXgZpNZfBg" alt="Publicación 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://clips-media-assets2.twitch.tv/WeKkPGpcDenqnsMijMpZug/AT-cm%7CWeKkPGpcDenqnsMijMpZug-social-preview.jpg" alt="Publicación 3">
+            </div>
+        </section>
+
+        <!-- Ventana flotante para el mensaje -->
+        <div class="toast" id="toast">Lo has seguido</div>
+    </div>
+
+    <script src="script.s"></script> <!-- Enlace al archivo de script -->
+    <script>
+        let followCount = 0; // Contador de seguimientos
+        const maxFollows = 0; // Máximo de seguimientos permitidos
+
+        document.getElementById("followButton").addEventListener("click", function() {
+            if (followCount < maxFollows) {
+                followCount++;
+                document.getElementById("followers").innerText = parseInt(document.getElementById("followers").innerText) + 1; // Actualiza el número de seguidores
+                this.innerText = "Siguiendo"; // Cambia el texto del botón
+                showToast("Lo has seguido"); // Muestra el mensaje flotante
+            } else {
+                showToast("Solo puedes seguir 2 veces"); // Mensaje si ya alcanzó el máximo
+            }
+        });
+
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.innerText = message; // Cambia el mensaje del toast
+            toast.style.display = "block"; // Muestra el toast
+
+            // Oculta el toast después de 3 segundos
+            setTimeout(() => {
+                toast.style.display = "none";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

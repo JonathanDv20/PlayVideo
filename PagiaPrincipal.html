@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- Usando styles.css -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMJ1Uu2P4k1H6gC1jfszjRIV+lHSts8QxE5jO" crossorigin="anonymous">
+    <title>PlayVideo</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Barra lateral -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="#"><i class="fas fa-fire"></i> Tendencias</a></li>
+                <li><a href="#"><i class="fas fa-play-circle"></i> Suscripciones</a></li>
+                <li><a href="#"><i class="fas fa-video"></i> Biblioteca</a></li>
+                <li><a href="#"><i class="fas fa-clock"></i> Más tarde</a></li>
+                <li><a href="#"><i class="fas fa-thumbs-up"></i> Me gusta</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScnpN85sIahth0xUV-j-V8mIm5DpeYuL5uLyrC_DEUli1TlRQ/viewform?usp=sf_link"><i class="fas fa-upload"></i> Subir video</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+            <!-- Barra de búsqueda -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Buscar..." class="search-input"> <!-- ID agregado -->
+                <button class="search-button" onclick="searchVideo()">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="icon-button">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button class="icon-button">
+                    <i class="fas fa-upload"></i>
+                </button>
+            </div>
+
+            <div class="videos">
+                <section class="video-section">
+                    <article class="video-container">
+                        <a href="watch01.html" class="thumbnail" data-duration="7:49:02"> <!-- Enlace actualizado -->
+                            <img class="thumbnail-image" src="https://i.ytimg.com/vi/5qk8WKG-_wE/hq720.jpg" alt="Thumbnail del video" />
+                            <span class="duration">7:49:01</span>
+                        </a>
+                        <div class="video-bottom-section">
+                            <a href="#">
+                                <img class="channel-icon" src="https://yt3.googleusercontent.com/0yT-Bb_JksIE12twsg726ffdrGbRfuoy_rMrgSOqoNJsY7wvm0pcYQfeDbNFTOrwwRY3T9_98g8=s160-c-k-c0x00ffffff-no-rj" alt="Icono del canal" />
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title">Jugando Detroit Become Human!</a>
+                                <div class="video-channel-name-wrapper">
+                                    <a href="canal.html" class="video-channel-name">IlloJuan</a>
+                                </div>
+                                <div class="video-metadata">
+                                    <span>5.2K Vistas</span>
+                                    ●
+                                    <span>Hace mas de 30h</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="watch3280dnas9q.html" class="thumbnail" data-duration="2:00"> <!-- Enlace actualizado para el nuevo video -->
+                            <img class="thumbnail-image" src="https://cdn.vox-cdn.com/thumbor/1gT1ESyGDSqjodDSg79OzPe_gsQ=/0x0:1920x1080/1920x0/filters:focal(0x0:1920x1080):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/24007964/69716_2_S1_Ep2_Don_t_Hug_Me_I_m_Scared___Ep2_.jpg" alt="Thumbnail del video Don't Hug Me" />
+                            <span class="duration">2:00</span>
+                        </a>
+                        <div class="video-bottom-section">
+                            <a href="#">
+                                <img class="channel-icon" src="https://th.bing.com/th/id/R.cad7b7207cd90ae97c95164048ba6c5f?rik=6DBiNyf%2bRRM4qQ&riu=http%3a%2f%2fvignette3.wikia.nocookie.net%2fdonthugme%2fimages%2f9%2f97%2fYellowDHMIS4.png%2frevision%2flatest%3fcb%3d20150401112228&ehk=r3eH5%2bnzdYCH%2fTEhdj7Ap8VX2EioaQ92isXgTDysJ%2b0%3d&risl=&pid=ImgRaw&r=0" alt="Icono del canal" />
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"></a>Don't Hug Me. Cap 4</a>
+                                <div class="video-channel-name-wrapper">
+                                    <a href="@Don't Hug Me. I'm Scared.html" class="video-channel-name">Don't Hug Me. I'm Scared </a>
+                                </div>
+                                <div class="video-metadata">
+                                    <span>1.2K Vistas</span>
+                                    ●
+                                    <span>Hace mas de 120 segundos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+                <!-- Puedes agregar más videos aquí -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function searchVideo() {
+            var query = document.getElementById("searchInput").value.toLowerCase();
+            if (query === "lidiaxxxgg") {
+                window.location.href = "Lidiaxxxgg.html";
+            } else {
+                alert("No se encontró ningún resultado para: " + query);
+            }
+        }
+    </script>
+</body>
+</html>

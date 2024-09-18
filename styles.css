@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #1e1e1e; /* Fondo oscuro para el contenedor */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 2px solid #3e3e3e; /* Añadir un borde a la imagen */
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.username {
+    font-size: 24px;
+    color: #fff; /* Texto más brillante */
+    margin-bottom: 10px;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+    margin-bottom: 15px;
+    color: #b0b0b0; /* Color de texto de las estadísticas */
+}
+
+.follow-btn {
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.follow-btn:hover {
+    background-color: #007bb5;
+}
+
+.profile-bio {
+    margin-bottom: 20px;
+    color: #d0d0d0; /* Texto para la bio */
+}
+
+.profile-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #3e3e3e; /* Borde oscuro para las imágenes */
+}
+
+.post-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    color: #b0b0b0;
+    font-size: 14px;
+}
+
+.verified-badge {
+    width: 20px; /* Ajusta el tamaño del ícono */
+    height: 20px;
+    margin-left: 5px; /* Espacio entre el nombre y el ícono */
+    vertical-align: middle; /* Alinea el ícono con el texto */
+}

@@ -1,0 +1,174 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Para permitir que la barra lateral y el contenido principal estén en la misma línea */
+}
+
+.container {
+    display: flex; /* Organiza la barra lateral y el contenido principal en línea */
+}
+
+.sidebar {
+    width: 240px; /* Ancho de la barra lateral */
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra a la derecha */
+    height: 100vh; /* Altura completa */
+    padding: 20px; /* Espaciado interno */
+}
+
+.sidebar ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+.sidebar li {
+    margin-bottom: 15px; /* Espaciado entre los enlaces */
+}
+
+.sidebar a {
+    text-decoration: none; /* Sin subrayado */
+    color: #333; /* Color del texto */
+    display: flex; /* Permite que el ícono y el texto estén en línea */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.sidebar a i {
+    margin-right: 10px; /* Espacio a la derecha del ícono */
+}
+
+.main-content {
+    flex-grow: 1; /* Permite que el contenido principal ocupe el espacio restante */
+    padding: 20px; /* Espaciado interno */
+}
+
+.search-bar {
+    display: flex; /* Organiza los elementos en línea */
+    align-items: center; /* Centra verticalmente los elementos */
+    margin-bottom: 20px; /* Espaciado debajo de la barra de búsqueda */
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 24px; /* Bordes redondeados */
+    padding: 4px; /* Espaciado interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.search-input {
+    flex-grow: 1; /* Permite que el campo de entrada ocupe todo el espacio disponible */
+    border: none; /* Sin borde */
+    outline: none; /* Sin contorno */
+    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+    padding: 6px; /* Espaciado interno */
+    border-radius: 24px; /* Bordes redondeados */
+    width: 200px; /* Ancho reducido para que quepa más espacio */
+}
+
+.search-button {
+    background-color: #007bff; /* Color azul */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 24px; /* Bordes redondeados */
+    padding: 6px 10px; /* Espaciado interno del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    margin-left: 5px; /* Espacio a la izquierda del botón de búsqueda */
+}
+
+.icon-button {
+    background-color: transparent; /* Fondo transparente */
+    color: #007bff; /* Color del ícono */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    margin-left: 5px; /* Espacio a la izquierda de los íconos */
+}
+
+.icon-button i {
+    font-size: 1em; /* Tamaño del icono */
+}
+
+.videos {
+    max-width: 1200px; /* Ancho máximo de la sección de videos */
+    margin: auto; /* Centra la sección */
+    display: grid; /* Usa un grid para la disposición */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Crea columnas responsivas */
+    gap: 20px; /* Espacio entre videos */
+}
+
+.video-section {
+    background-color: white; /* Fondo blanco para cada video */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden; /* Para asegurar que los bordes redondeados se apliquen */
+}
+
+.video-container {
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columna */
+}
+
+.thumbnail {
+    position: relative; /* Para posicionar el elemento de duración */
+    overflow: hidden; /* Oculta el desbordamiento */
+}
+
+.thumbnail-image {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+}
+
+.duration {
+    position: absolute; /* Posiciona la duración sobre la miniatura */
+    bottom: 10px; /* Distancia desde la parte inferior */
+    right: 10px; /* Distancia desde la derecha */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semi-transparente */
+    color: white; /* Color del texto */
+    padding: 5px 8px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.video-bottom-section {
+    display: flex; /* Organiza los elementos en línea */
+    padding: 10px; /* Espaciado interno */
+}
+
+.channel-icon {
+    width: 40px; /* Ancho del icono del canal */
+    height: 40px; /* Alto del icono del canal */
+    border-radius: 50%; /* Bordes redondeados para hacer un círculo */
+    margin-right: 10px; /* Espacio a la derecha del icono */
+}
+
+.video-details {
+    flex-grow: 1; /* Permite que esta sección ocupe el espacio restante */
+}
+
+.video-title {
+    font-size: 1em; /* Tamaño de fuente del título */
+    font-weight: 500; /* Peso del texto */
+    color: #333; /* Color del texto */
+    margin: 0; /* Sin margen */
+}
+
+.video-channel-name {
+    font-size: 0.85em; /* Tamaño de fuente más pequeño */
+    color: #666; /* Color gris */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.video-metadata {
+    font-size: 0.75em; /* Tamaño de fuente más pequeño */
+    color: #999; /* Color gris más claro */
+}
+
+.video-title {
+    font-size: 1em; /* Tamaño de fuente del título */
+    font-weight: 500; /* Peso del texto */
+    color: #333; /* Color del texto */
+    margin: 0; /* Sin margen */
+    text-decoration: none; /* Sin subrayado */
+    cursor: default; /* Cambia el cursor para que no parezca un enlace */
+}
+
+.video-channel-name-wrapper {
+    margin-top: 5px; /* Espacio entre el título y el nombre del canal */
+}
