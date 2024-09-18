@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilo para la ventana flotante */
-        .toast {
+        .toast, .relation-toast {
             position: fixed;
             top: 20px;
             right: 20px;
@@ -19,6 +19,12 @@
             z-index: 1000;
         }
         
+        /* Ventana para "En relación con" */
+        .relation-toast {
+            top: 80px; /* Debajo de la ventana grande */
+            background-color: #ff9800; /* Color diferente para distinguir */
+        }
+
         /* Estilo para el botón */
         .follow-btn, .admin-btn {
             background-color: #1e90ff;
@@ -48,7 +54,7 @@
                 </h1>
                 <div class="profile-stats">
                     <div><strong>0</strong> Me Gusta</div>
-                    <div><strong id="followers">16.2K</strong> seguidores</div>
+                    <div><strong id="followers">20.2K</strong> seguidores</div>
                     <div><strong>0</strong> seguidos</div>
                 </div>
                 <button class="follow-btn" id="followButton">Seguir</button>
@@ -66,21 +72,24 @@
         <!-- Galería de publicaciones -->
         <section class="profile-gallery">
             <div class="gallery-item">
-                <img src="https://scontent.fntr6-1.fna.fbcdn.net/v/t39.30808-6/382234862_122116938824032334_8822071940585864069_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=YIBFHTkNreYQ7kNvgGCaCGz&_nc_ht=scontent.fntr6-1.fna&_nc_gid=Ar5oxkHsfpUyoytsLwrQHKr&oh=00_AYCMOdmoq1xXFgQpHN8pvfTAAp4tDjsHhIBeUJbbKOcGpg&oe=66F0369A" alt="Publicación 1">
+                <img src="https://i.pinimg.com/564x/c4/5f/4b/c45f4bbfc9f3f94df29297c1cca5e9c7.jpg" alt="Publicación 1">
             </div>
             <div class="gallery-item">
                 <img src="https://i.ytimg.com/vi/lDcfLj-c9iI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCqGkwpy_GiDocihQD8v0IaVTLjag" alt="Publicación 2">
             </div>
             <div class="gallery-item">
-                <img src="https://i.pinimg.com/564x/13/74/18/137418f3f1e46c0216ade2a6ca121c55.jpg" alt="Publicación 3">
+                <img src="https://i.pinimg.com/564x/b0/d4/33/b0d433c4c111134354373a2a15bb1772.jpg" alt="Publicación 3">
             </div>
         </section>
 
         <!-- Ventana flotante para el mensaje -->
         <div class="toast" id="toast">Lo has seguido</div>
+
+        <!-- Nueva ventana "En relación con" -->
+        <div class="relation-toast" id="relationToast">En relación con: [Contenido relacionado]</div>
     </div>
 
-    <script src="script.s"></script> <!-- Enlace al archivo de script -->
+    <script src="script.js"></script> <!-- Enlace al archivo de script -->
     <script>
         let followCount = 0; // Contador de seguimientos
         const maxFollows = 0; // Máximo de seguimientos permitidos
@@ -91,6 +100,7 @@
                 document.getElementById("followers").innerText = parseInt(document.getElementById("followers").innerText) + 1; // Actualiza el número de seguidores
                 this.innerText = "Siguiendo"; // Cambia el texto del botón
                 showToast("Lo has seguido"); // Muestra el mensaje flotante
+                showRelationToast(); // Muestra la ventana de relación
             } else {
                 showToast("Lo Has Seguido Correctamente /guardando información en el servidor (3.2KB)"); // Mensaje si ya alcanzó el máximo
             }
@@ -109,6 +119,17 @@
             // Oculta el toast después de 3 segundos
             setTimeout(() => {
                 toast.style.display = "none";
+            }, 3000);
+        }
+
+        // Función para mostrar la ventana "En relación con"
+        function showRelationToast() {
+            const relationToast = document.getElementById("relationToast");
+            relationToast.style.display = "block"; // Muestra la ventana
+
+            // Oculta la ventana después de 3 segundos
+            setTimeout(() => {
+                relationToast.style.display = "none";
             }, 3000);
         }
     </script>
