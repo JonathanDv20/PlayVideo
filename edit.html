@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayVideo - Panel de Control</title>
     <link rel="stylesheet" href="edit.css">
-    <title>Panel de Usuario</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Panel de Usuario</h1>
-        <div class="panel">
-            <h2>Estadísticas del Usuario</h2>
-            <div class="statistic">
-                <h3>Últimos Seguidores (24 horas)</h3>
-                <p id="followers">20</p>
+    <div class="panel-container">
+        <!-- Barra lateral -->
+        <aside class="panel-sidebar">
+            <div class="perfil">
+                <img src="https://scontent.fntr6-1.fna.fbcdn.net/v/t39.30808-1/442418494_122150211518151876_4835030671183587211_n.jpg?stp=dst-jpg_s200x200&_nc_cat=100&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=13Ccwae3WR0Q7kNvgGJhbcD&_nc_ht=scontent.fntr6-1.fna&_nc_gid=AVJM_bjMiScJuQN16qEvg0-&oh=00_AYCNRdndbFb6MNhxqgbScqssDvynyR1TqnBBkubnuxs1Aw&oe=66EFE719" alt="Foto de perfil" class="perfil-img">
+                <p class="perfil-nombre">Lidiaxxxgg</p>
             </div>
-            <div class="statistic">
-                <h3>Horas de Reproducción</h3>
-                <p id="watchTime">0</p>
+            <ul>
+                <li><a href="#" onclick="cambiarSeccion('inicio')">Inicio</a></li>
+                <li><a href="#" onclick="cambiarSeccion('monetizacion')">Monetización</a></li>
+                <li><a href="#" onclick="cambiarSeccion('estadisticas')">Estadísticas</a></li>
+                <li><a href="#" onclick="cambiarSeccion('configuracion')">Configuración</a></li>
+            </ul>
+        </aside>
+
+        <!-- Sección principal -->
+        <main class="panel-main">
+            <header class="panel-header">
+                <h1>PlayVideo - Panel de Control</h1>
+            </header>
+
+            <div id="contenido">
+                <h2>Bienvenido al panel</h2>
+                <p>Aquí encontrarás las estadísticas y herramientas para gestionar tu canal en PlayVideo.</p>
             </div>
-            <div class="statistic">
-                <h3>Vistas Totales</h3>
-                <p id="totalViews">0</p>
-            </div>
-            <div class="add-bio">
-                <h3>Añadir Bio</h3>
-                <p>Completa tu biografía haciendo clic en el siguiente enlace:</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZ7trl6MVBxNaMoIFkewObL8vTTHopcOOu9GSJ6LTtzfuwLA/viewform?usp=sf_link" target="_blank">Añadir Bio</a>
-            </div>
-        </div>
+        </main>
     </div>
+
+    <script src="edit.js"></script>
 </body>
 </html>
