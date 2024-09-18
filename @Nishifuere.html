@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Jonathan Tadeo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo para la ventana flotante */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+            z-index: 1000;
+        }
+        
+        /* Estilo para el botón */
+        .follow-btn, .admin-btn {
+            background-color: #1e90ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .follow-btn:hover, .admin-btn:hover {
+            background-color: #187bcd;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Encabezado del perfil -->
+        <header class="profile-header">
+            <div class="profile-picture">
+                <img src="https://scontent.fntr6-4.fna.fbcdn.net/v/t39.30808-6/459947275_122094353636542295_1875301875461725591_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Bn36MKhinYoQ7kNvgFDaACi&_nc_ht=scontent.fntr6-4.fna&_nc_gid=AZCGdX7ewfv69CJWKea9QDF&oh=00_AYBK1L61_cY9Ki6a2t_BPw6TNbwKfPQrJgnTsCMZaS_B4Q&oe=66F03288" alt="Foto de perfil">
+            </div>
+            <div class="profile-info">
+                <h1 class="username">Jonathan Tadeo
+                    <img src="https://cdn3.iconfinder.com/data/icons/toolbar-signs/512/vote-512.png" alt="Verificado" class="verified-badge">
+                </h1>
+                <div class="profile-stats">
+                    <div><strong>0</strong> Me Gusta</div>
+                    <div><strong id="followers">16.2K</strong> seguidores</div>
+                    <div><strong>0</strong> seguidos</div>
+                </div>
+                <button class="follow-btn" id="followButton">Seguir</button>
+                <!-- Nuevo botón de entrar como admin -->
+                <button class="admin-btn" id="adminButton">Entrar como admin</button>
+            </div>
+        </header>
+
+        <!-- Bio del perfil -->
+        <section class="profile-bio">
+            <h2>¡Hola a todos!</h2>
+            <p>Esperemos que PlayVideo Sea algo Genial!</p>
+        </section>
+
+        <!-- Galería de publicaciones -->
+        <section class="profile-gallery">
+            <div class="gallery-item">
+                <img src="ss" alt="Publicación 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/R.301e26d411de90ffa1998178e9df7fa2?rik=N9yT0hr5lG4sEg&pid=ImgRaw&r=0" alt="Publicación 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/R.2dec0981796bd1fad5396551561705b3?rik=t8yMAWeh23Du1Q&pid=ImgRaw&r=0" alt="Publicación 3">
+            </div>
+        </section>
+
+        <!-- Ventana flotante para el mensaje -->
+        <div class="toast" id="toast">Lo has seguido</div>
+    </div>
+
+    <script src="script.s"></script> <!-- Enlace al archivo de script -->
+    <script>
+        let followCount = 0; // Contador de seguimientos
+        const maxFollows = 0; // Máximo de seguimientos permitidos
+
+        document.getElementById("followButton").addEventListener("click", function() {
+            if (followCount < maxFollows) {
+                followCount++;
+                document.getElementById("followers").innerText = parseInt(document.getElementById("followers").innerText) + 1; // Actualiza el número de seguidores
+                this.innerText = "Siguiendo"; // Cambia el texto del botón
+                showToast("Lo has seguido"); // Muestra el mensaje flotante
+            } else {
+                showToast("Lo Has Seguido Correctamente /guardando información en el servidor (3.2KB)"); // Mensaje si ya alcanzó el máximo
+            }
+        });
+
+        // Redirección al panel de admin
+        document.getElementById("adminButton").addEventListener("click", function() {
+            window.location.href = "paneldonthug.html"; // Redirige a paneldonthug.html
+        });
+
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.innerText = message; // Cambia el mensaje del toast
+            toast.style.display = "block"; // Muestra el toast
+
+            // Oculta el toast después de 3 segundos
+            setTimeout(() => {
+                toast.style.display = "none";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
